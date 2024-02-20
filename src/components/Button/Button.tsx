@@ -1,10 +1,26 @@
 import './Button.scss';
 
-function Button() {
+interface joke {
+  icon_url: string;
+  id: string;
+  url: string;
+  value: string;
+}
+
+interface Button {
+  onClick: () => void;
+  joke: joke;
+  loading: boolean;
+}
+
+function Button({ onClick, joke, loading }: Button) {
   return (
-    <button type="button" className="button">
-      NEW JOKE
-    </button>
+    <div>
+      <button type="button" className="button" onClick={onClick}>
+        New joke
+      </button>
+      {loading ? <div>Loading...</div> : <div> {joke.value} </div>}
+    </div>
   );
 }
 

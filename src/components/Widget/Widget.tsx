@@ -1,11 +1,24 @@
 import Button from '../Button/Button';
 import './Widget.scss';
 
-function Widget() {
+interface joke {
+  icon_url: string;
+  id: string;
+  url: string;
+  value: string;
+}
+
+interface Widget {
+  onClick: () => void;
+  joke: joke;
+  loading: boolean;
+}
+
+function Widget({ joke, onClick, loading }: Widget) {
   return (
     <article className="widget">
       <p className="widget-content">One super hilarious joke</p>
-      <Button />
+      <Button onClick={onClick} joke={joke} loading={loading} />
     </article>
   );
 }
