@@ -10,11 +10,18 @@ function App() {
     url: string;
     value: string;
   }
+
+  const test = {
+    icon_url: 'blabla',
+    id: '1',
+    url: 'blabla',
+    value: 'drôle',
+  };
   interface IJokeList {
-    jokes: joke[];
+    jokes: joke;
   }
 
-  const [joke, setJoke] = useState<joke>();
+  const [joke, setJoke] = useState<joke>(test);
 
   const [loading, setLoading] = useState(false);
 
