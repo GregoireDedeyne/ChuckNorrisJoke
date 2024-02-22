@@ -14,7 +14,7 @@ function App() {
     jokes: joke[];
   }
 
-  const [joke, setJoke] = useState<joke | null>(null);
+  const [joke, setJoke] = useState<joke>();
 
   const [loading, setLoading] = useState(false);
 
